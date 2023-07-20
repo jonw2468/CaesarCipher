@@ -1,13 +1,13 @@
 all: program
 
-program: helper.o jon_woods_caesar.o
-	gcc -Wall -o program helper.o jon_woods_caesar.o
+program: helper.o caesar.o
+	gcc -Wall -o program helper.o caesar.o
 
-jon_woods_caesar.o: jon_woods_caesar.asm
-	nasm -f elf64 jon_woods_caesar.asm
+caesar.o: caesar.asm
+	nasm -f elf64 caesar.asm
 
 helper.o: helper.c
 	gcc -c helper.c
 
 clean:
-	rm -f program jon_woods_caesar.o helper.o
+	rm -f program caesar.o helper.o
